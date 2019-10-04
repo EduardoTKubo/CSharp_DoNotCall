@@ -1,0 +1,20 @@
+C:\Ekubo\C#\Edu\LendoTxt\LendoTxt\bin\Debug\LendoTxt.exe.config
+C:\Ekubo\C#\Edu\LendoTxt\LendoTxt\bin\Debug\LendoTxt.exe
+C:\Ekubo\C#\Edu\LendoTxt\LendoTxt\bin\Debug\LendoTxt.pdb
+C:\Ekubo\C#\Edu\LendoTxt\LendoTxt\obj\Debug\LendoTxt.csprojAssemblyReference.cache
+C:\Ekubo\C#\Edu\LendoTxt\LendoTxt\obj\Debug\LendoTxt.Form1.resources
+C:\Ekubo\C#\Edu\LendoTxt\LendoTxt\obj\Debug\LendoTxt.Properties.Resources.resources
+C:\Ekubo\C#\Edu\LendoTxt\LendoTxt\obj\Debug\LendoTxt.csproj.GenerateResource.cache
+C:\Ekubo\C#\Edu\LendoTxt\LendoTxt\obj\Debug\LendoTxt.csproj.CoreCompileInputs.cache
+C:\Ekubo\C#\Edu\LendoTxt\LendoTxt\obj\Debug\LendoTxt.exe
+C:\Ekubo\C#\Edu\LendoTxt\LendoTxt\obj\Debug\LendoTxt.pdb
+C:\Ekubo\Sistemas C#\DoNotCall\LendoTxt\bin\Debug\LendoTxt.exe.config
+C:\Ekubo\Sistemas C#\DoNotCall\LendoTxt\bin\Debug\LendoTxt.exe
+C:\Ekubo\Sistemas C#\DoNotCall\LendoTxt\bin\Debug\LendoTxt.pdb
+C:\Ekubo\Sistemas C#\DoNotCall\LendoTxt\obj\Debug\LendoTxt.csprojAssemblyReference.cache
+C:\Ekubo\Sistemas C#\DoNotCall\LendoTxt\obj\Debug\LendoTxt.Form1.resources
+C:\Ekubo\Sistemas C#\DoNotCall\LendoTxt\obj\Debug\LendoTxt.Properties.Resources.resources
+C:\Ekubo\Sistemas C#\DoNotCall\LendoTxt\obj\Debug\LendoTxt.csproj.GenerateResource.cache
+C:\Ekubo\Sistemas C#\DoNotCall\LendoTxt\obj\Debug\LendoTxt.csproj.CoreCompileInputs.cache
+C:\Ekubo\Sistemas C#\DoNotCall\LendoTxt\obj\Debug\LendoTxt.exe
+C:\Ekubo\Sistemas C#\DoNotCall\LendoTxt\obj\Debug\LendoTxt.pdb
