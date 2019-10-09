@@ -13,7 +13,7 @@ namespace DoNotCall.Classes
         private static SqlConnection sqlCon;
         private static DataTable DtXls = null;
 
- 
+
         public static async Task<bool> LePlanilhaAsync(string _cam, string _uf)
         {
             // lendo planilha ,importar para [Fech_01] ,devolver datatable
@@ -75,26 +75,24 @@ namespace DoNotCall.Classes
                     case "MS":// gerando Dt2 a partir de Dt ,para tratamento de campos.
                         foreach (DataRow item in DtXls.Rows)
                         {
-                            if (item["Telefone:"].ToString() != "Telefone:")
+
+                            if (item["Telefone:"].ToString() != "")
                             {
-                                if (item["Telefone:"].ToString() != "")
+                                string Lido = item["Telefone:"].ToString();
+                                Lido = Lido.Substring(1, 1);
+                                if (char.IsNumber(Convert.ToChar(Lido)))
                                 {
-                                    string Lido = item["Telefone:"].ToString();
-                                    Lido = Lido.Substring(1, 1);
-                                    if (char.IsNumber(Convert.ToChar(Lido)))
+                                    if (DateTime.Parse(item["Cadastrado em:"].ToString()) > DateTime.Parse("01/01/2019"))
                                     {
-                                        if (DateTime.Parse(item["Cadastrado em:"].ToString()) > DateTime.Parse("01/01/2019"))
-                                        {
-                                            DataRow dr = DT.NewRow();
-                                            dr["ORIGEM"] = "PROCON";
-                                            dr["UF"] = "MS";
-                                            dr["NOME"] = item["Nome / Razão Social:"];
-                                            dr["TELEFONE"] = clsFuncoes.RetornaNumero(item["Telefone:"].ToString());
-                                            dr["DATA"] = DateTime.Parse(item["Cadastrado em:"].ToString());
-                                            dr["ApartirDe"] = DateTime.Parse(item["Bloqueado em:"].ToString());
-                                            dr["SITUACAO"] = item["Situação:"].ToString();
-                                            DT.Rows.Add(dr);
-                                        }
+                                        DataRow dr = DT.NewRow();
+                                        dr["ORIGEM"] = "PROCON";
+                                        dr["UF"] = "MS";
+                                        dr["NOME"] = item["Nome / Razão Social:"];
+                                        dr["TELEFONE"] = clsFuncoes.RetornaNumero(item["Telefone:"].ToString());
+                                        dr["DATA"] = DateTime.Parse(item["Cadastrado em:"].ToString());
+                                        dr["ApartirDe"] = DateTime.Parse(item["Bloqueado em:"].ToString());
+                                        dr["SITUACAO"] = item["Situação:"].ToString();
+                                        DT.Rows.Add(dr);
                                     }
                                 }
                             }
@@ -104,20 +102,50 @@ namespace DoNotCall.Classes
                     case "RN":// gerando Dt2 a partir de Dt ,para tratamento de campos.
                         foreach (DataRow item in DtXls.Rows)
                         {
-                            if (item["Telefone (DDD/Numero)"].ToString() != "Telefone (DDD/Numero)")
+                            if (item["Telefone (DDD/Numero)"].ToString() != "")
                             {
-                                if (DateTime.Parse(item["Data Ativação"].ToString()) > DateTime.Parse("01/01/2019"))
+                                string Lido = item["Telefone (DDD/Numero)"].ToString();
+                                Lido = Lido.Substring(1, 1);
+                                if (char.IsNumber(Convert.ToChar(Lido)))
                                 {
-                                    DataRow dr = DT.NewRow();
-                                    dr["ORIGEM"] = "PROCON";
-                                    dr["UF"] = "RN";
-                                    dr["NOME"] = item["Nome"];
-                                    dr["TELEFONE"] = clsFuncoes.RetornaNumero(item["Telefone (DDD/Numero)"].ToString());
-                                    dr["DATA"] = DateTime.Parse(item["Data Ativação"].ToString());
-                                    dr["ApartirDe"] = DateTime.Parse(item["Dt.Lim.Recebimento Chamada"].ToString());
-                                    DT.Rows.Add(dr);
+                                    if (DateTime.Parse(item["Data Ativação"].ToString()) > DateTime.Parse("01/01/2019"))
+                                    {
+                                        DataRow dr = DT.NewRow();
+                                        dr["ORIGEM"] = "PROCON";
+                                        dr["UF"] = "RN";
+                                        dr["NOME"] = item["Nome"];
+                                        dr["TELEFONE"] = clsFuncoes.RetornaNumero(item["Telefone (DDD/Numero)"].ToString());
+                                        dr["DATA"] = DateTime.Parse(item["Data Ativação"].ToString());
+                                        dr["ApartirDe"] = DateTime.Parse(item["Dt.Lim.Recebimento Chamada"].ToString());
+                                        DT.Rows.Add(dr);
+                                    }
                                 }
                             }
+                        }
+                        break;
+
+                    case "SP":// gerando Dt2 a partir de Dt ,para tratamento de campos.
+                        foreach (DataRow item in DtXls.Rows)
+                        {
+                            if (item["Telefone"].ToString() != "")
+                            {
+                                string Lido = item["Telefone"].ToString();
+                                Lido = Lido.Substring(1, 1);
+                                if (char.IsNumber(Convert.ToChar(Lido)))
+                                {
+                                    if (DateTime.Parse(item["Cadastrado em"].ToString()) > DateTime.Parse("01/01/2019"))
+                                    {
+                                        DataRow dr = DT.NewRow();
+                                        dr["ORIGEM"] = "PROCON";
+                                        dr["UF"] = "SP";
+                                        dr["TELEFONE"] = clsFuncoes.RetornaNumero(item["Telefone"].ToString());
+                                        dr["SITUACAO"] = item["Evento"];
+                                        dr["DATA"] = DateTime.Parse(item["Cadastrado em"].ToString());
+                                        dr["ApartirDe"] = DateTime.Parse(item["A Partir de"].ToString());
+                                        DT.Rows.Add(dr);
+                                    }
+                                }
+                            }          
                         }
                         break;
                 }
@@ -150,6 +178,7 @@ namespace DoNotCall.Classes
                     {
                         case "CE":
                         case "MS":
+                        case "SP":
                             s.DestinationTableName = "Atu_Procon";
                             s.ColumnMappings.Add("ORIGEM", "ORIGEM");       // ORIGEM  DESTINO
                             s.ColumnMappings.Add("UF", "UF");

@@ -1,10 +1,10 @@
 
 
  -- ------------------------------------------------------------------------------
--- SRV_db03 -- 08/08/2019
+-- SRV_db03 -- 08/10/2019
 	use PROCON
 
-	select count(*) from DoNotCall wh  -- 6031176
+	select count(*) from DoNotCall  -- 25682913
 	select UF ,telbase ,count(*) qtd from DoNotCall group by uf,telBase having count(*) > 1 -- 0
 
 	
@@ -12,120 +12,109 @@
 	select top 3 * from ATU_PROCON 	
 	select top 3 * from DoNotCall where UF = 'AL' and Procon = 1 and NaoMePerturbe  = 0  order by id desc
 
-	select count(*) from DoNotCall where UF = 'AL'                                       -- 21022	21142
-	select count(*) from DoNotCall where UF = 'AL' and Procon = 1 and NaoMePerturbe  = 0 --   501	  621
-	select count(*) from DoNotCall where UF = 'AL' and Procon = 1 and NaoMePerturbe  = 1 --  8417    8736
-	select count(*) from DoNotCall where UF = 'AL' and Procon = 0 and NaoMePerturbe  = 1 -- 12104   11785
+	select count(*) from DoNotCall where UF = 'AL'                                       -- 210918	 210944
+	select count(*) from DoNotCall where UF = 'AL' and Procon = 1 and NaoMePerturbe  = 0 --    283	    309
+	select count(*) from DoNotCall where UF = 'AL' and Procon = 1 and NaoMePerturbe  = 1 --   9285     9390
 
 
 
-	select top 3 * from ATU_PROCON 	
+	select top 10 * from ATU_PROCON 	
 	select top 3 * from DoNotCall where UF = 'CE' and Procon = 1 and NaoMePerturbe  = 0  order by id desc
 
-	select count(*) from DoNotCall where UF = 'CE'                                       -- 47518	47764
-	select count(*) from DoNotCall where UF = 'CE' and Procon = 1 and NaoMePerturbe  = 0 --   104	 350
-	select count(*) from DoNotCall where UF = 'CE' and Procon = 1 and NaoMePerturbe  = 1 -- 14287   14977
-	select count(*) from DoNotCall where UF = 'CE' and Procon = 0 and NaoMePerturbe  = 1 -- 33127   32437
+	select count(*) from DoNotCall where UF = 'CE'                                       -- 598017	598042
+	select count(*) from DoNotCall where UF = 'CE' and Procon = 1 and NaoMePerturbe  = 0 --       	    26
+	select count(*) from DoNotCall where UF = 'CE' and Procon = 1 and NaoMePerturbe  = 1 --			 16155
+
 
 
 
 	select top 3 * from ATU_PROCON 	
 	select top 3 * from DoNotCall where UF = 'ES' and Procon = 1 and NaoMePerturbe  = 0  order by id desc
 
-	select count(*) from DoNotCall where UF = 'ES'                                       -- 102379	108449
-	select count(*) from DoNotCall where UF = 'ES' and Procon = 1 and NaoMePerturbe  = 0 --  13141	 19211
-	select count(*) from DoNotCall where UF = 'ES' and Procon = 1 and NaoMePerturbe  = 1 --  60154   61602
-	select count(*) from DoNotCall where UF = 'ES' and Procon = 0 and NaoMePerturbe  = 1 --  29084   27636
+	select count(*) from DoNotCall where UF = 'ES'                                       -- 306124	307710
+	select count(*) from DoNotCall where UF = 'ES' and Procon = 1 and NaoMePerturbe  = 0 --       	 14702
+	select count(*) from DoNotCall where UF = 'ES' and Procon = 1 and NaoMePerturbe  = 1 --			 69349
 
 
 
 	select top 3 * from ATU_PROCON 	
 	select top 3 * from DoNotCall where UF = 'GO' and Procon = 1 and NaoMePerturbe  = 0  order by id desc
 
-	select count(*) from DoNotCall where UF = 'GO'                                       --  89705	 90555
-	select count(*) from DoNotCall where UF = 'GO' and Procon = 1 and NaoMePerturbe  = 0 --    647	  1497
-	select count(*) from DoNotCall where UF = 'GO' and Procon = 1 and NaoMePerturbe  = 1 --  31510   33964
-	select count(*) from DoNotCall where UF = 'GO' and Procon = 0 and NaoMePerturbe  = 1 --  57548   55094
+	select count(*) from DoNotCall where UF = 'GO'                                       --  657858	 658061
+	select count(*) from DoNotCall where UF = 'GO' and Procon = 1 and NaoMePerturbe  = 0 --       	    299
+	select count(*) from DoNotCall where UF = 'GO' and Procon = 1 and NaoMePerturbe  = 1 --			  37458
 
 
 
 	select top 3 * from ATU_PROCON 	
 	select top 3 * from DoNotCall where UF = 'MG' and Procon = 1 and NaoMePerturbe  = 0  order by id desc
 
-	select count(*) from DoNotCall where UF = 'MG'                                       --  -	 437043	444673
-	select count(*) from DoNotCall where UF = 'MG' and Procon = 1 and NaoMePerturbe  = 0 --  -	  31875	 39505
-	select count(*) from DoNotCall where UF = 'MG' and Procon = 1 and NaoMePerturbe  = 1 --  -   222469	235924
-	select count(*) from DoNotCall where UF = 'MG' and Procon = 0 and NaoMePerturbe  = 1 --  -   182699	169244
+	select count(*) from DoNotCall where UF = 'MG'                                       --  -	1423352	1423917
+	select count(*) from DoNotCall where UF = 'MG' and Procon = 1 and NaoMePerturbe  = 0 --  -	  21468	  22033
+	select count(*) from DoNotCall where UF = 'MG' and Procon = 1 and NaoMePerturbe  = 1 --  -   265748  271598
 
 
 
 	select top 3 * from ATU_PROCON 	
 	select top 3 * from DoNotCall where UF = 'MS' and Procon = 1 and NaoMePerturbe  = 0  order by id desc
 
-	select count(*) from DoNotCall where UF = 'MS'                                       --  -	 46382	47012
-	select count(*) from DoNotCall where UF = 'MS' and Procon = 1 and NaoMePerturbe  = 0 --  -	  1595	 2225
-	select count(*) from DoNotCall where UF = 'MS' and Procon = 1 and NaoMePerturbe  = 1 --  -   26273	27185
-	select count(*) from DoNotCall where UF = 'MS' and Procon = 0 and NaoMePerturbe  = 1 --  -   18514	17602
+	select count(*) from DoNotCall where UF = 'MS'                                       --  -  281558	281649
+	select count(*) from DoNotCall where UF = 'MS' and Procon = 1 and NaoMePerturbe  = 0 --  -	    84	   175
+	select count(*) from DoNotCall where UF = 'MS' and Procon = 1 and NaoMePerturbe  = 1 --  -   30320	 31571
 
 
 
 	select top 3 * from ATU_PROCON 	
 	select top 3 * from DoNotCall where UF = 'PB' and Procon = 1 and NaoMePerturbe  = 0  order by id desc
 
-	select count(*) from DoNotCall where UF = 'PB'                                       --  -	 19781	19914
-	select count(*) from DoNotCall where UF = 'PB' and Procon = 1 and NaoMePerturbe  = 0 --  -	   315	  448
-	select count(*) from DoNotCall where UF = 'PB' and Procon = 1 and NaoMePerturbe  = 1 --  -    3603	 4528
-	select count(*) from DoNotCall where UF = 'PB' and Procon = 0 and NaoMePerturbe  = 1 --  -   15863	14938
-
+	select count(*) from DoNotCall where UF = 'PB'                                       --  -	416783	416796
+	select count(*) from DoNotCall where UF = 'PB' and Procon = 1 and NaoMePerturbe  = 0 --  -	    29	    42
+	select count(*) from DoNotCall where UF = 'PB' and Procon = 1 and NaoMePerturbe  = 1 --  -    5261	  5411
 
 
 	select top 3 * from ATU_PROCON 	
+	select obs ,count(*) from ATU_PROCON group by obs order by obs
 	select top 3 * from DoNotCall where UF = 'PR' and Procon = 1 and NaoMePerturbe  = 0  order by id desc
 
-	select count(*) from DoNotCall where UF = 'PR'                                       --   458332	462980
-	select count(*) from DoNotCall where UF = 'PR' and Procon = 1 and NaoMePerturbe  = 0 --      484	  5132
-	select count(*) from DoNotCall where UF = 'PR' and Procon = 1 and NaoMePerturbe  = 1 --   366900	382264
-	select count(*) from DoNotCall where UF = 'PR' and Procon = 0 and NaoMePerturbe  = 1 --    90948	 75584
+	select count(*) from DoNotCall where UF = 'PR'                                       --  1670723	1670723
+	select count(*) from DoNotCall where UF = 'PR' and Procon = 1 and NaoMePerturbe  = 0 --       96	     96
+	select count(*) from DoNotCall where UF = 'PR' and Procon = 1 and NaoMePerturbe  = 1 --   399265	 399265
 
 
 
 	select top 3 * from ATU_PROCON 	
 	select top 3 * from DoNotCall where UF = 'RN' and Procon = 1 and NaoMePerturbe  = 0  order by id desc
 
-	select count(*) from DoNotCall where UF = 'RN'                                       --  -	 15292	15323
-	select count(*) from DoNotCall where UF = 'RN' and Procon = 1 and NaoMePerturbe  = 0 --  -	    18	   49
-	select count(*) from DoNotCall where UF = 'RN' and Procon = 1 and NaoMePerturbe  = 1 --  -    1696   1772
-	select count(*) from DoNotCall where UF = 'RN' and Procon = 0 and NaoMePerturbe  = 1 --  -   13578	13502
+	select count(*) from DoNotCall where UF = 'RN'                                       --  -	 190149	 190154
+	select count(*) from DoNotCall where UF = 'RN' and Procon = 1 and NaoMePerturbe  = 0 --  -	      2	      7
+	select count(*) from DoNotCall where UF = 'RN' and Procon = 1 and NaoMePerturbe  = 1 --  -     1885    1912
 
 
 
 	select top 3 * from ATU_PROCON 	
 	select top 3 * from DoNotCall where UF = 'RS' and Procon = 1 and NaoMePerturbe  = 0  order by id desc
 
-	select count(*) from DoNotCall where UF = 'RS'                                       --  -	 338258  341878
-	select count(*) from DoNotCall where UF = 'RS' and Procon = 1 and NaoMePerturbe  = 0 --  -	  12362	  15982
-	select count(*) from DoNotCall where UF = 'RS' and Procon = 1 and NaoMePerturbe  = 1 --  -   236598  242034
-	select count(*) from DoNotCall where UF = 'RS' and Procon = 0 and NaoMePerturbe  = 1 --  -    89298	  83862
+	select count(*) from DoNotCall where UF = 'RS'                                       --  -	1876963  1877306
+	select count(*) from DoNotCall where UF = 'RS' and Procon = 1 and NaoMePerturbe  = 0 --  -	    469	     812
+	select count(*) from DoNotCall where UF = 'RS' and Procon = 1 and NaoMePerturbe  = 1 --  -   263914   267733
 
 
 
 	select top 3 * from ATU_PROCON 	
 	select top 3 * from DoNotCall where UF = 'SC' and Procon = 1 and NaoMePerturbe  = 0  order by id desc
 
-	select count(*) from DoNotCall where UF = 'SC'                                       --  -	 166915  170388
-	select count(*) from DoNotCall where UF = 'SC' and Procon = 1 and NaoMePerturbe  = 0 --  -	    434	   3907
-	select count(*) from DoNotCall where UF = 'SC' and Procon = 1 and NaoMePerturbe  = 1 --  -    98469  103980
-	select count(*) from DoNotCall where UF = 'SC' and Procon = 0 and NaoMePerturbe  = 1 --  -    68012	  62501
+	select count(*) from DoNotCall where UF = 'SC'                                       --  -	 957538   957892
+	select count(*) from DoNotCall where UF = 'SC' and Procon = 1 and NaoMePerturbe  = 0 --  -	      0	     354
+	select count(*) from DoNotCall where UF = 'SC' and Procon = 1 and NaoMePerturbe  = 1 --  -   113741   117217
 
 
 
 	select top 3 * from ATU_PROCON 	
 	select top 3 * from DoNotCall where UF = 'SP' and Procon = 1 and NaoMePerturbe  = 0  order by id desc
 
-	select count(*) from DoNotCall where UF = 'SP'                                       --  -	 3698368   3708706
-	select count(*) from DoNotCall where UF = 'SP' and Procon = 1 and NaoMePerturbe  = 0 --  -	  844439	854777
-	select count(*) from DoNotCall where UF = 'SP' and Procon = 1 and NaoMePerturbe  = 1 --  -   2290616   2376499
-	select count(*) from DoNotCall where UF = 'SP' and Procon = 0 and NaoMePerturbe  = 1 --  -    563313	477430
+	select count(*) from DoNotCall where UF = 'SP'                                       --  -	11309149	11310317
+	select count(*) from DoNotCall where UF = 'SP' and Procon = 1 and NaoMePerturbe  = 0 --  -	  835553	  836721
+	select count(*) from DoNotCall where UF = 'SP' and Procon = 1 and NaoMePerturbe  = 1 --  -   2470369	 2517035
 
 
 	select * into [BKP_SP] from donotcall where uf = 'SP' -- 3698368

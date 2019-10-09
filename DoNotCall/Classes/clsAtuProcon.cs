@@ -132,6 +132,7 @@ namespace DoNotCall.Classes
                     case "CE":
                     case "MS":
                     case "RN":
+                    case "SP":
                         // incluindo dados a partir de arquivo xlsx
                         Boolean booOK = await clsPlanilha.LePlanilhaAsync(_cam, _uf);
                         break;
@@ -299,7 +300,7 @@ namespace DoNotCall.Classes
 
                     case "ES":
                     case "PR":
-                    case "SP":
+                    //case "SP":
                         // gerando list a partir do arquivo texto
                         List<AtuProcon> listPR = clsArquivos.Arquivo_PR(_cam);
 
@@ -588,13 +589,14 @@ namespace DoNotCall.Classes
 
                 SqlCommand command = new SqlCommand("[dbo].[sp_Atu_DoNotCall_II]", sqlCon)
                 {
-                    CommandType = CommandType.StoredProcedure
+                    CommandType = CommandType.StoredProcedure,
+                    CommandTimeout = 540
                 };
                 command.Parameters.Add(new SqlParameter("@uf", SqlDbType.VarChar)).Value = _uf;
 
                 // usando sincrono para poder esperar o resultado do stored procedure
-                //strResp = command.ExecuteScalarAsync().ToString() + " registros incluídos";
-                strResp = command.ExecuteScalar().ToString() + " registros incluídos";
+                var x = await command.ExecuteScalarAsync();
+                strResp = x + " registros incluídos";
             }
             catch(Exception e)
             {
